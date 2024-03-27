@@ -1,0 +1,19 @@
+w to shift to next word
+b to shift to previous word
+d2w deletes two words
+e jumps to the end of the word.
+0 shifts to the beginning of the line.
+$ jumps to the end of the line
+ci command is used to change if we are somewhere inbetween like ==> ci" change the text in ""
+% used to jump between the opening and closing brackts. 
+gg beginning of file
+^G end of file
+ctrl + v to select columnwise
+shift v to select multiple lines.
+intended gg=G406G
+:/ _word_ used to find the word in file.  n for next and N for previous 
+:%s/_word1_/_word2_/g  ==> for change in selected text don't use % in command
+:reg lost of registers
+"7p used to print the 7th registers
+
+--Macros--
