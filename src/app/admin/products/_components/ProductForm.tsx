@@ -1,5 +1,6 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -30,5 +31,6 @@ export default function ProductForm() {
             <Label htmlFor="image">Image</Label>
             <Input type="file" id="image" name="image" required />
         </div>
+        <Button type="submit">Save</Button>
     </form>
 }
