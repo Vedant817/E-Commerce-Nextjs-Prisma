@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { PageHeader } from "../_components/PageHeader";
 import { Button } from "@/components/ui/button"
@@ -13,7 +14,8 @@ import {
 import db from "@/db/db";
 import { CheckCircle2, MoreVertical, XCircle } from "lucide-react";
 import { formatCurrency, formatNumber } from "@/lib/formatters";
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
+import { ActiveToggleDropdownItem, DeleteDropdownItem } from "./_components/ProductActions";
 
 
 
@@ -88,6 +90,9 @@ async function ProductsTable() {
                                 <DropdownMenuItem asChild>
                                     <Link href={`/admin/products/${product.id}/edit`}>Edit</Link>
                                 </DropdownMenuItem>
+                                <ActiveToggleDropdownItem id={product.id} isAvailableForPurchase={product.isAvailableForPurchase} />
+                                <DropdownMenuSeparator />
+                                <DeleteDropdownItem id={product.id} disabled={product._count.orders > 0} />
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </TableCell>
