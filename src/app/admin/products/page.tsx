@@ -63,13 +63,13 @@ async function ProductsTable() {
                 <TableRow key={product.id}>
                     <TableCell>
                         {product.isAvailableForPurchase ? (<>
-                            <CheckCircle2 />
                             <span className="sr-only">Available</span>
+                            <CheckCircle2 />
                         </>
                         ) : (
                             <>
-                                <XCircle />
                                 <span className="sr-only">Unavailable</span>
+                                <XCircle className="stroke-destructive" />
                             </>
                         )}
                     </TableCell>
